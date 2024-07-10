@@ -17,19 +17,19 @@ public enum FCPXMLError: Error {
 
 public struct FCPXMLConverter {
 
-    private static let dateFormatter: DateFormatter = {
+    public static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         return formatter
     }()
 
-    private static let xmlDecoder: XMLDecoder = {
+    public static let xmlDecoder: XMLDecoder = {
         let decoder = XMLDecoder()
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         return decoder
     }()
 
-    private static let xmlEncoder: XMLEncoder = {
+    public static let xmlEncoder: XMLEncoder = {
         let encoder = XMLEncoder()
         encoder.dateEncodingStrategy = .formatted(dateFormatter)
         return encoder
